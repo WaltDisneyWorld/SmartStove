@@ -1,0 +1,329 @@
+/*
+Colors:
+
+light-red : #BB5959
+subtle-dark-red: #a04141
+
+ */
+
+/* ---------------------------- */
+/* BASIC SETUP */
+/* ---------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: rgb(250, 250, 250);
+  color: rgb(12, 12, 12);
+  font-family: 'CircularStd', sans-serif;
+  font-family: 400;
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
+}
+
+.clearfix {zoom: 1}
+.clearfix:after {
+  content: '.';
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+/* --------------------------- */
+/* RESUABLE COMPONENTS */
+/* --------------------------- */
+
+.row {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+section {
+  padding: 80px 0;
+}
+
+/* HEADINGS */
+
+h1,h2 {
+  line-height: 145%;
+}
+
+h1 {
+  letter-spacing: 1px;
+  font-size: 200%;
+  font-weight: 500;
+  width: 45%;
+}
+
+h2 {
+  font-size: 170%;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-weight: 500;
+}
+
+/* BUTTONS */
+
+.btn:link,
+.btn:visited {
+  font-size: 80%;
+  font-weight: 500;
+  padding: 14px 26px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.4s;
+  box-shadow: 0px 3px 10px #cc7b7bd0 ;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #a04141;
+}
+
+.btn-light-red {
+  background-color: #BB5959;
+  color: #fff;
+}
+
+/* PARAGRAPHS */
+
+p {
+  line-height: 155%;
+  font-size: 90%;
+}
+
+.metadata-section {
+  text-align: center;
+  margin: 0 auto 40px auto;
+  width: 50%;
+  margin-bottom: 90px;
+}
+
+.col-grey {
+  color : rgb(126, 126, 126);
+}
+
+/* LISTS */
+
+ul li {
+  line-height: 145%;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* ---------------------------- */
+/* HEADER */
+/* ---------------------------- */
+
+header {
+  background-image: url(img/Bg.jpg);
+  background-size: cover;
+  background-position: 550px 0px;
+  background-attachment: fixed;
+  height: 107vh;
+  position: relative;
+}
+
+#curve {
+  top:0;
+  position: absolute;
+  z-index: 0;
+  height: 107vh;
+  width: 100%;
+}
+
+.hero-text-box {
+  position: absolute;
+  width: 1140px;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  z-index: 2;
+}
+
+.hero-text-box p {
+  width: 50%;
+  margin-bottom: 90px;
+}
+
+.logo {
+  float:left;
+  height: 55px;
+  margin-top: 30px;
+}
+
+header nav {
+  position: relative;
+  z-index: 3;
+}
+
+.main-nav {
+  float: right;
+  list-style: none;
+  margin-top: 50px;
+  margin-right: 45%;
+}
+
+.main-nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+  text-decoration: none;
+  color:#000;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+  color: #a04141;
+}
+
+.main-nav li a.active {
+  color: #BB5959;
+}
+
+/* ---------------------------- */
+/* PARTS */
+/* ---------------------------- */
+
+.part-card {
+  box-shadow: 0px 8px 15px rgb(235, 235, 235);
+  padding: 20px;
+  border-radius: 10px;
+  transition: background-color 0.4s;
+  margin-right: 15px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.part-card h3, .part-card img {
+  margin-bottom: 30px;
+  transition: color 0.4s;
+}
+
+.part-card img {
+  height: 30px;
+  transition: filter 0.4s;
+}
+
+.part-card p {
+  font-size: 65%;
+  transition: color 0.4s;
+}
+
+.part-card:hover{
+  background-color: #BB5959;
+}
+
+.part-card:hover p,.part-card:hover h3 {
+  color: #fff;
+}
+
+.part-card:hover img {
+  filter: invert(1);
+}
+
+/* PART'S MODAL */
+
+.modal {
+  display: none;
+  position: fixed;
+  top:0;
+  right:0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.733);
+  animation: fadeIn 0.5s;
+}
+
+.part-modal-box {
+  background-color: white;
+  width: 70%;
+  margin: 5% auto;
+  padding: 5%;
+  border-radius: 10px;
+}
+
+.part-modal-box .modal-header {
+  margin-bottom: 40px;
+}
+
+.part-modal-box .modal-header img {
+  height: 35px;
+  transform: translateY(10px);
+}
+
+.part-modal-box .modal-header h3 {
+  display: inline;
+}
+
+.grey-box {
+  background-color: rgb(238, 238, 238);
+  height: 190px;
+  margin:0 20px 40px 0px;
+  border-radius: 10px;
+}
+
+.part-modal-box .modal-body h4 {
+  font-size: 75%;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.part-modal-box .modal-body ul li {
+  font-size: 78%;
+}
+
+
+
+/* ---------------------------- */
+/* TYPES */
+/* ---------------------------- */
+
+.section-types .row {
+  text-align: center;
+}
+
+.stove-pic img {
+  width: 45%;
+}
+
+.stove-pic::after {
+  content: '';
+  font-size: 30px;
+  display: block;
+  width: 30%;
+  margin: 50px auto 0 auto;
+  filter:blur(20px);
+  border-bottom: 7px solid black;
+}
