@@ -16,13 +16,19 @@ subtle-dark-red: #a04141
   box-sizing: border-box;
 }
 
-html {
+html,body {
   background-color: rgb(250, 250, 250);
   color: rgb(12, 12, 12);
   font-family: 'CircularStd', sans-serif;
   font-family: 400;
   font-size: 20px;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
 }
 
 .clearfix {zoom: 1}
@@ -81,17 +87,18 @@ h3 {
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.4s;
-  box-shadow: 0px 3px 10px #cc7b7bd0 ;
 }
 
-.btn:hover,
-.btn:active {
-  background-color: #a04141;
-}
 
-.btn-light-red {
+.btn.btn-light-red {
   background-color: #BB5959;
+  box-shadow: 0px 3px 10px #cc7b7bd0 ;
   color: #fff;
+}
+
+.btn.btn-light-red:hover,
+.btn.btn-light-red:active {
+  background-color: #a04141;
 }
 
 /* PARAGRAPHS */
@@ -314,6 +321,10 @@ header nav {
   text-align: center;
 }
 
+.stove-pic {
+  margin-bottom: 200px;
+}
+
 .stove-pic img {
   width: 45%;
 }
@@ -326,4 +337,277 @@ header nav {
   margin: 50px auto 0 auto;
   filter:blur(20px);
   border-bottom: 7px solid black;
+}
+
+.types-box {
+  background-image: linear-gradient(to bottom right,rgb(177, 76, 76), #CF7777);
+  background-color: #BB5959;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.types-box h2, .types-box p {
+  margin-top: 40px;
+  color: #fff;
+}
+
+.types-box p {
+  color:rgb(241, 241, 241);
+  width: 70%;
+  margin: 0 auto;
+}
+
+.circle-dots-container {
+  width: 70%;
+  margin: 40px auto;
+}
+
+.circle-dots-container .dot {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0 7%;
+  padding: 2.8%;
+  text-align: center;
+  background-color: #882e2e;
+  color:rgb(241, 241, 241);
+  font-size: 80%;
+  font-weight: 500;
+  transition: background-color 0.7s, color 0.7s, box-shadow 0.7s;
+}
+
+.circle-dots-container .dot.active {
+  background-color: rgb(241, 241, 241);
+  color:black;
+  box-shadow: 0px 3px 20px rgba(255, 255, 255, 0.615);
+  transition: box-shadow 1s, background-color 1s, color 1s;
+}
+
+.stove-type-container {
+  /* background-color: coral; */
+  height: 120px;
+  margin-bottom: 40px;
+}
+
+.stove-type-container ul {
+  list-style: none;
+  position: relative;
+}
+
+.stove-type-container ul li {
+  /* background-color: red; */
+  width: 100%;
+  position: absolute;
+}
+
+.stove-type {
+  opacity: 0;
+  transition: opacity 0.8s;
+}
+
+.stove-type.active {
+  opacity: 1;
+}
+
+.type-nav-btn {
+  width: 35px;
+  height: 35px;
+  border:0;
+  border-radius: 50%;
+  color: #a04141;
+  margin: 10px;
+  font-size: 20px;
+  background-color: #fff;
+  padding-top: 4px;
+  cursor: pointer;
+  outline: none;
+  transition: box-shadow 0.2s, opacity 0.8s;
+}
+
+.type-nav-btn:hover {
+  box-shadow: 0 1px 4px #fff;
+}
+
+.type-nav-btn.is-greyed-out {
+  opacity: 0.3;
+}
+
+/* ---------------------------- */
+/* SERVICES */
+/* ---------------------------- */
+
+.section-services .title {
+  position: relative;
+}
+
+.section-services .title h2 {
+  text-align: left;
+  font-weight: 400;
+  z-index: 1;
+  position: relative;
+}
+
+.section-services .title .bg-quote {
+  position: absolute;
+  z-index: 0;
+  font-size: 100px;
+  color:rgb(219, 219, 219);
+  width: 160px;
+  height: 140px;
+  top: -25px;
+}
+
+.service-track-container {
+  width: 100%;
+  /* overflow-x: scroll; */
+  position: relative;
+}
+
+.service-track {
+  list-style: none;
+  white-space: nowrap;
+  /* background-color: red; */
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.service-track::before {
+  content:'';
+  box-shadow: inset 40px 0 20px rgba(255, 255, 255, 0.616);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5%;
+  height: 110%;
+  /* background-color: rgba(82, 133, 163, 0.479); */
+  z-index: 1;
+}
+
+.service-track::after {
+  content:'';
+  box-shadow: inset -150px 0px 80px rgba(250, 250, 250, 0.9);
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 110%;
+  /* background-color: rgba(82, 133, 163, 0.479); */
+
+}
+
+.service-track li {
+  display: inline-block;
+  /* transform: translateX(-100px); */
+}
+
+.service-box {
+  white-space: normal;
+  width: 480px;
+  margin: 10px 15px;
+  /* background-color: coral; */
+  padding: 35px;
+  border-radius: 5px;
+  box-shadow: 0px 8px 15px rgb(235, 235, 235);
+}
+
+.service-box h3 {
+  margin-bottom: 28px;
+}
+
+.service-box p {
+  font-size: 70%;
+  width: 80%;
+  color: rgb(126, 126, 126);
+}
+
+.service-nav-btn {
+  padding: 10px;
+  width: 60px;
+  height: 60px;
+  border:0;
+  outline:0;
+  border-radius: 50%;
+  margin-right: 20px;
+  background-color: white;
+  box-shadow: 0 1px 10px rgb(231, 231, 231);
+  font-size: 23px;
+  color:#BB5959;
+  transition: background-color 0.4s, color 0.4s, box-shadow 0.4s;
+  cursor: pointer;
+}
+
+.service-nav-btn:hover {
+  background-color: #BB5959;
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(187, 89, 89, 0.795);
+}
+
+/* ---------------------------- */
+/* FOOTER */
+/* ---------------------------- */
+
+footer {
+  padding: 80px 0 40px 0;
+}
+
+.inquire-box {
+  background-image: linear-gradient(to bottom right,rgb(177, 76, 76), #CF7777);
+  padding: 80px;
+  text-align: center;
+  width: 85%;
+  margin: 0 auto 55px auto;
+  border-radius: 14px;
+  color: #fff;
+}
+
+.inquire-box h2 {
+  font-weight: 400;
+}
+
+.btn.btn-light {
+  color: #BB5959;
+  background-color: #fff;
+  box-shadow: 0px 3px 10px #818181d0 ;
+  padding: 14px 40px;
+  font-size: 100%;
+  margin-bottom: 20px;
+  transition: box-shadow 0.4s;
+}
+
+.btn.btn-light:hover {
+  box-shadow: -5px 5px 15px #444444d0 ;
+}
+
+footer hr {
+  border: 1px solid rgba(238, 238, 238, 0.842);
+  margin-bottom: 40px;
+}
+
+.social-nav {
+  list-style: none;
+}
+
+.social-nav li:first-child {
+  margin-left: 90px;
+}
+
+.social-nav li {
+  float:left;
+  margin-right: 50px;
+  font-size: 32px;
+  color: rgb(139, 139, 139);
+  transition: color 0.4s;
+  cursor: pointer;
+}
+
+.social-nav li:hover {
+  color : #000;
+}
+
+.rights-statement {
+  float: right;
+  color: rgb(134, 134, 134);
+  margin-top:7px;
+  font-size: 80%;
 }
