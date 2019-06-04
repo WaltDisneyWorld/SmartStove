@@ -1,6 +1,6 @@
 function initiateDynamicComponents() {
 
-  function initiatePartModal() {
+  function addEventListenersForPartModal() {
     const partCards = document.querySelectorAll('.part-card');
     const partModal = document.querySelector('#part-modal');
 
@@ -21,7 +21,7 @@ function initiateDynamicComponents() {
     });
   }
 
-  function initiateStoveTypes() {
+  function addEventListenersForStoveTypes() {
     const stoveContainer = document.querySelector('.stove-type-container');
     const stoveTypes = Array.from(stoveContainer.children)[0];
     const stoveTypesArray = Array.from(stoveContainer.children[0].children);
@@ -90,10 +90,41 @@ function initiateDynamicComponents() {
 
   }
 
-  initiatePartModal();
-  initiateStoveTypes();
+  function addEventListenersForHamburgerMenu() {
+    const hamburger = document.querySelector('.hamburger-btn');
+    const navMenu = document.querySelector('.main-nav-container');
+
+    function showMenu() {
+      hamburger.querySelector('i').classList.remove('ion-navicon');
+      hamburger.querySelector('i').classList.add('ion-ios-close-empty');
+
+      navMenu.style.visibility = 'visible';
+      navMenu.style.opacity = '1';
+
+      hamburger.removeEventListener('click', showMenu);
+      hamburger.addEventListener('click', hideMenu);
+    }
+
+    function hideMenu() {
+      navMenu.style.opacity = '0';
+      setTimeout(()=> {
+        navMenu.style.visibility = 'hidden';
+      }, 500);
+      hamburger.querySelector('i').classList.remove('ion-ios-close-empty');
+      hamburger.querySelector('i').classList.add('ion-navicon');
+
+      hamburger.removeEventListener('click', hideMenu);
+      hamburger.addEventListener('click', showMenu);
+    }
+
+    hamburger.addEventListener('click', showMenu);
+  }
+
+  addEventListenersForPartModal();
+  addEventListenersForStoveTypes();
+  addEventListenersForHamburgerMenu();
 }
 
-
-
-initiateDynamicComponents();
+window.onload = () => {
+  initiateDynamicComponents();
+};
