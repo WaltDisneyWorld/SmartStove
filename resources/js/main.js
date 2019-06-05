@@ -1,24 +1,57 @@
 function initiateDynamicComponents() {
 
-  function addEventListenersForPartModal() {
-    const partCards = document.querySelectorAll('.part-card');
-    const partModal = document.querySelector('#part-modal');
+  function addEventListenersForModals() {
 
-    for (let card of partCards) {
-      card.addEventListener('click', () => {
-        partModal.style.display = 'block';
+    // Common functions for all modal
+    function openModal(modal) {
+      modal.style.display = 'block';
+    }
+
+    function closeModal(modal) {
+      modal.style.animation = 'fadeOut 0.5s';
+      setTimeout(()=> {
+        modal.style.display = 'none';
+        modal.style.animation = 'fadeIn 1s';
+      }, 400);
+    }
+
+    function closeModalOnBackgroundClick(modal) {
+      document.body.addEventListener('click', (e) => {
+        if(e.target == modal) {
+          closeModal(modal);
+        }
       });
     }
 
-    document.body.addEventListener('click', (e) => {
-      if(e.target == partModal) {
-        partModal.style.animation = 'fadeOut 0.5s';
-        setTimeout(()=> {
-          partModal.style.display = 'none';
-          partModal.style.animation = 'fadeIn 1s';
-        }, 400);
+    // each one for specific modal
+    function forPartsModal() {
+      const partCards = document.querySelectorAll('.part-card');
+      const partModal = document.querySelector('#part-modal');
+      const closeBtn = document.querySelector('#part-modal-close-btn');
+
+      for (let card of partCards) {
+        card.addEventListener('click', () => openModal(partModal) );
       }
-    });
+
+      closeBtn.addEventListener('click', () => closeModal(partModal));
+
+      document.body.addEventListener('click', () => closeModalOnBackgroundClick(partModal) );
+    }
+
+    function forContactModal() {
+      const contactBtn = document.querySelector('#contact-modal-btn');
+      const contactModal = document.querySelector('#contact-modal');
+      const closeBtn = document.querySelector('#contact-modal-close-btn');
+
+      contactBtn.addEventListener('click', () => openModal(contactModal));
+      closeBtn.addEventListener('click', () => closeModal(contactModal));
+
+      document.body.addEventListener('click', () => closeModalOnBackgroundClick(contactModal) );
+    }
+
+    forPartsModal();
+    forContactModal();
+
   }
 
   function addEventListenersForStoveTypes() {
@@ -120,9 +153,40 @@ function initiateDynamicComponents() {
     hamburger.addEventListener('click', showMenu);
   }
 
-  addEventListenersForPartModal();
+  function addEventListenersForServiceNav() {
+    const leftBtn = document.querySelector('#service-left');
+    const rightBtn = document.querySelector('#service-right');
+
+    const firstServiceBox = document.querySelector('.service-track').children[0];
+
+    leftBtn.addEventListener('click', () => {
+      const firstServiceBox = document.querySelector('.service-track').children[0];
+      const matrix = new WebKitCSSMatrix(window.getComputedStyle(firstServiceBox).webkitTransform);
+      const amountToMove = matrix.m41 - 180;
+
+      const serviceBoxesArray = Array.from(document.querySelector('.service-track').children);
+      for(box of serviceBoxesArray) {
+        box.style.transform = 'translateX('+ amountToMove +'px)';
+      }
+    });
+
+    rightBtn.addEventListener('click', () => {
+      const firstServiceBox = document.querySelector('.service-track').children[0];
+      const matrix = new WebKitCSSMatrix(window.getComputedStyle(firstServiceBox).webkitTransform);
+      const amountToMove = matrix.m41 + 180;
+
+      const serviceBoxesArray = Array.from(document.querySelector('.service-track').children);
+      for(box of serviceBoxesArray) {
+        box.style.transform = 'translateX('+ amountToMove +'px)';
+      }
+    });
+
+  }
+
+  addEventListenersForModals();
   addEventListenersForStoveTypes();
   addEventListenersForHamburgerMenu();
+  addEventListenersForServiceNav();
 }
 
 window.onload = () => {

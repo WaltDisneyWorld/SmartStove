@@ -74,6 +74,10 @@
     width: 90%;
   }
 
+  .contact-modal-box {
+    width: 90%;
+  }
+
   .part-card p {
     width: 70%;
   }
@@ -87,6 +91,10 @@
 
 /* small phones to small tablets: 481 - 767 */
 @media only screen and (max-width: 767px) {
+
+  h1 {
+    font-size: 160%;
+  }
 
   #header-curve {
     display: none;
@@ -106,16 +114,50 @@
     width: 100%;
   }
 
+  .metadata-section {
+    width: 90%;
+  }
+
   .part-card p {
     width: 100%;
   }
 
+  .stove-pic {
+    margin-bottom: 100px;
+  }
+
+  .stove-pic img {
+    width: 70%;
+  }
+
+  .stove-pic::after {
+    width: 55%;
+  }
+
+  .circle-dots-container {
+    width: 100%;
+  }
+
   .circle-dots-container .dot {
-    margin: 0 2%;
-    padding-top: 5.5%;
+    margin: 0 4%;
+    padding-top: 3.5%;
     width: 40px;
     height: 40px;
   }
+
+  .types-box {
+    padding: 18px;
+  }
+
+  .types-box p {
+    width: 100%;
+  }
+
+  .inquire-box {
+    width: 100%;
+    padding: 50px;
+  }
+
   .social-nav {
     padding-left: 55px;
     margin-bottom: 30px;
@@ -137,6 +179,18 @@
     text-align: center;
     /* background-color: red; */
     /* padding-right: 30%; */
+  }
+
+  .service-track::before {
+    display: none;
+  }
+
+  .service-track::after {
+    display: none;
+  }
+
+  .service-box {
+    width: 350px;
   }
 }
 

@@ -10,8 +10,6 @@
   <link rel="stylesheet" href="vendors/css/grid.css">
   <link rel="stylesheet" href="vendors/css/circular-std.css">
   <link rel="stylesheet" href="vendors/css/ionicons.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.8.2/css/fontawesome.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.8.2/css/brands.min.css">
   <link rel="stylesheet" href="resources/css/style.css">
   <link rel="stylesheet" href="resources/css/queries.css">
 
@@ -30,7 +28,7 @@
           <li><a href="#">Product</a></li>
           <li><a href="#">Team</a></li>
           <li><a href="#">Blog</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a id="contact-modal-btn" href="#">Contact</a></li>
         </ul>
       </div>
     </nav>
@@ -45,6 +43,38 @@
       <a href="#" class="btn btn-light-red">Show me more</a>
     </div>
     <img id="header-curve" src="resources/img/curve.svg">
+
+    <div id="contact-modal" class="modal">
+      <div class="contact-modal-box">
+        <div class="modal-header">
+          <i id="contact-modal-close-btn" class="modal-close ion-ios-close-empty"></i>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <form method="post">
+              <div class="row">
+                <div class="col span-1-of-2">
+                  <label for="form-name">Name</label>
+                  <input id="form-name" type="text">
+                </div>
+                <div class="col span-1-of-2">
+                  <label for="form-subject">Subject</label>
+                  <input id="form-subject" type="text">
+                </div>
+              </div>
+              <div class="row">
+                <label for="form-message">Message</label>
+                <textarea id="form-message" rows="10"></textarea>
+              </div>
+              <div class="row">
+                  <a class="btn btn-white-send" href="#">Send</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </header>
 
   <section class="section-parts">
@@ -178,6 +208,7 @@
         <div class="modal-header">
           <img src="resources/img/Parts/Burner.svg" alt="">
           <h3>Burner</h3>
+          <i id="part-modal-close-btn" class="modal-close ion-ios-close-empty"></i>
         </div>
         <div class="modal-body">
 
@@ -311,10 +342,10 @@
     </div>
 
     <div class="row">
-      <button class="service-nav-btn">
+      <button id="service-left" class="service-nav-btn">
           <i class="ion-chevron-left"></i>
       </button>
-      <button class="service-nav-btn">
+      <button id="service-right" class="service-nav-btn">
           <i class="ion-chevron-right"></i>
       </button>
     </div>
@@ -325,20 +356,20 @@
     <div class="row">
       <div class="inquire-box">
         <h2>The future of Stove is <strong>Asilverse Stove</strong></h2>
-        <a href="#" class="btn btn-light">Inquire</a>
+        <a href="#" class="btn btn-light-inquire">Inquire</a>
       </div>
 
       <hr>
 
       <div class="row">
         <ul class="social-nav">
-          <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
-          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><img src="resources/img/icons8-facebook.svg"></a></li>
+          <li><a href="#"><img src="resources/img/icons8-instagram_new.svg"></i></a></li>
+          <li><a href="#"><img src="resources/img/icons8-twitter.svg"></i></a></li>
         </ul>
 
         <p class="rights-statement">
-          &copy; Copyright 2019 Asilverse
+          &copy; Copyright 2019
         </p>
 
       </div>

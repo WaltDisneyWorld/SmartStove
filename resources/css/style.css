@@ -3,7 +3,6 @@ Colors:
 
 light-red : #BB5959
 subtle-dark-red: #a04141
-
  */
 
 /* ---------------------------- */
@@ -86,10 +85,12 @@ h3 {
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.4s;
+  -webkit-tap-highlight-color: transparent;
 }
 
 
-.btn.btn-light-red {
+.btn.btn-light-red:link,
+.btn.btn-light-red:visited {
   background-color: #BB5959;
   box-shadow: 0px 3px 10px #cc7b7bd0 ;
   color: #fff;
@@ -98,6 +99,32 @@ h3 {
 .btn.btn-light-red:hover,
 .btn.btn-light-red:active {
   background-color: #a04141;
+}
+
+
+/* MODAL */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  top:0;
+  right:0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.733);
+  animation: fadeIn 0.5s;
+  overflow: auto;
+}
+
+.modal-close {
+  float: right;
+  font-size: 200%;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* PARAGRAPHS */
@@ -161,7 +188,7 @@ header nav {
   z-index: 3;
 }
 
-/* see queries.css 768-1023 */
+/* see queries.css 768-1023px */
 .main-nav-container {
   visibility: visible;
   opacity: 1;
@@ -244,6 +271,7 @@ header nav {
   box-shadow: -1px 1px 6px rgba(151, 151, 151, 0.534);
   transition: box-shadow 0.4s;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .hamburger-btn:hover {
@@ -252,6 +280,55 @@ header nav {
 
 .logo-for-mobile {
   display: none;
+}
+
+/* CONTACT MODAL */
+
+.contact-modal-box {
+  background-color: #BB5959;
+  width: 70%;
+  margin: 5% auto;
+  padding: 5%;
+  border-radius: 10px;
+  position: relative;
+  color: #fff;
+}
+
+.contact-modal-box form {
+  margin: 20px 0;
+}
+
+.contact-modal-box label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.contact-modal-box input,
+.contact-modal-box textarea {
+  border:0;
+  width: 100%;
+  border-radius: 5px;
+  padding: 8px;
+  margin-bottom: 20px;
+  background-color: #CF7777;
+  color:#fff;
+  outline: none;
+  resize:none;
+  font-size: 85%;
+}
+
+.btn.btn-white-send:link,
+.btn.btn-white-send:visited {
+  padding: 9px 35px;;
+  background-color: rgb(250, 250, 250);
+  box-shadow: 0px 1px 15px rgba(82, 82, 82, 0.637) ;
+  color: #BB5959;
+  transition: box-shadow 0.4s;
+}
+
+.btn.btn-white-send:hover,
+.btn.btn-white-send:active {
+  box-shadow: 0px 1px 10px #ec8f8fd0 ;
 }
 
 /* ---------------------------- */
@@ -266,6 +343,7 @@ header nav {
   margin-right: 15px;
   margin-bottom: 20px;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .part-card h3, .part-card img {
@@ -297,24 +375,13 @@ header nav {
 
 /* PART'S MODAL */
 
-.modal {
-  display: none;
-  position: fixed;
-  top:0;
-  right:0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.733);
-  animation: fadeIn 0.5s;
-  overflow: scroll;
-}
-
 .part-modal-box {
   background-color: white;
   width: 70%;
-  margin: 5% auto;
+  margin: 2% auto;
   padding: 5%;
   border-radius: 10px;
+  position: relative;
 }
 
 .part-modal-box .modal-header {
@@ -385,7 +452,6 @@ header nav {
 
 .stove-pic::after {
   content: '';
-  font-size: 30px;
   display: block;
   width: 30%;
   margin: 50px auto 0 auto;
@@ -421,7 +487,6 @@ header nav {
 }
 
 .stove-type-container {
-  /* background-color: coral; */
   height: 120px;
   margin-bottom: 40px;
 }
@@ -432,7 +497,6 @@ header nav {
 }
 
 .stove-type-container ul li {
-  /* background-color: red; */
   width: 100%;
   position: absolute;
 }
@@ -459,6 +523,7 @@ header nav {
   cursor: pointer;
   outline: none;
   transition: box-shadow 0.2s, opacity 0.8s;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .type-nav-btn:hover {
@@ -496,14 +561,12 @@ header nav {
 
 .service-track-container {
   width: 100%;
-  /* overflow-x: scroll; */
   position: relative;
 }
 
 .service-track {
   list-style: none;
   white-space: nowrap;
-  /* background-color: red; */
   position: relative;
   margin-bottom: 50px;
 }
@@ -516,7 +579,6 @@ header nav {
   left: 0;
   width: 5%;
   height: 110%;
-  /* background-color: rgba(82, 133, 163, 0.479); */
   z-index: 1;
 }
 
@@ -528,20 +590,18 @@ header nav {
   right: 0;
   width: 40%;
   height: 110%;
-  /* background-color: rgba(82, 133, 163, 0.479); */
-
 }
 
 .service-track li {
   display: inline-block;
-  /* transform: translateX(-100px); */
+  transform: translateX(0); /* initiating just for transition animation */
+  transition: transform 0.4s ease-out;
 }
 
 .service-box {
   white-space: normal;
   width: 480px;
   margin: 10px 15px;
-  /* background-color: coral; */
   padding: 35px;
   border-radius: 5px;
   box-shadow: 0px 8px 15px rgb(235, 235, 235);
@@ -571,6 +631,7 @@ header nav {
   color:#BB5959;
   transition: background-color 0.4s, color 0.4s, box-shadow 0.4s;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .service-nav-btn:hover {
@@ -605,7 +666,7 @@ footer {
   font-weight: 600;
 }
 
-.btn.btn-light {
+.btn.btn-light-inquire {
   color: #BB5959;
   background-color: #fff;
   box-shadow: 0px 1px 50px #525252bb ;
@@ -615,7 +676,7 @@ footer {
   transition: box-shadow 0.4s;
 }
 
-.btn.btn-light:hover {
+.btn.btn-light-inquire:hover {
   box-shadow: 0px 1px 30px #cececed0 ;
 }
 
@@ -637,16 +698,17 @@ footer hr {
   margin-right: 50px;
 }
 
-.social-nav li a:link,
-.social-nav li a:visited {
-  font-size: 140%;
-  color: rgb(139, 139, 139);
-  transition: color 0.4s;
+
+.social-nav img {
+  width: 30px;
+  filter: invert(55%);
+  transition: filter 0.4s;
 }
 
-.social-nav li a:hover {
-  color : #000;
+.social-nav img:hover {
+  filter: invert(0);
 }
+
 
 .rights-statement {
   float: right;
