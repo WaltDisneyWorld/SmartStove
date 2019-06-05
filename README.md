@@ -9,12 +9,15 @@
 
 ### On phone :
 
+<img src="https://user-images.githubusercontent.com/12862695/58943701-e9954580-879d-11e9-82d3-780aac64780c.jpg" width="350" />
 
-![p0](https://user-images.githubusercontent.com/12862695/58943701-e9954580-879d-11e9-82d3-780aac64780c.jpg)
-![p1](https://user-images.githubusercontent.com/12862695/58943705-ed28cc80-879d-11e9-9425-274017b66af3.jpg)
-![p2](https://user-images.githubusercontent.com/12862695/58943711-f0bc5380-879d-11e9-970e-f73c7dbdae18.jpg)
-![p3](https://user-images.githubusercontent.com/12862695/58943716-f2861700-879d-11e9-9600-0854f3aa126d.jpg)
-![p4](https://user-images.githubusercontent.com/12862695/58943720-f44fda80-879d-11e9-962f-f61b6bc6b4cd.jpg)
+<img src="https://user-images.githubusercontent.com/12862695/58943705-ed28cc80-879d-11e9-9425-274017b66af3.jpg" width="350" />
+
+<img src="https://user-images.githubusercontent.com/12862695/58943711-f0bc5380-879d-11e9-970e-f73c7dbdae18.jpg" width="350" />
+
+<img src="https://user-images.githubusercontent.com/12862695/58943716-f2861700-879d-11e9-9600-0854f3aa126d.jpg" width="350" />
+
+<img src="https://user-images.githubusercontent.com/12862695/58943720-f44fda80-879d-11e9-962f-f61b6bc6b4cd.jpg" width="350" />
 
 Code by me,
 
